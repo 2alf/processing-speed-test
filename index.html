@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Speed Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-active">
+            <div class="enter-screen" id="enterScreen">
+                <h1>Processing Speed Test</h1>
+                <p class="description">
+                    How to play:<br>
+                    • Look at the target character on bottom<br>
+                    • Click the matching character in the sequence on the left<br>
+                    • Correct answers: <a style="color:green;">+1</a> point<br>
+                    • Wrong answers: <a style="color:red;">-1</a> point<br><br>
+
+                    Your goal is to complete as many matches as possible before time runs out.<br><br>
+
+                    <em style="color:rgb(136, 136, 136);">*Based on typical processing speed test norms:</em><br>
+                    Visual scanning/matching tasks typically have response times of <a style="color:#ffffff;">600-1200ms</a> per item.
+                    In 60 seconds, performance <em>typically</em> ranges from <strong style="color:#ffffff;">15-50</strong> correct responses
+                </p>
+                <button onclick="startGame()" id="startBtn">Start test</button>
+            </div>
+            
+            <div class="game-screen" id="gameScreen" style="display: none;">
+                <div class="timer">Time: 60</div>
+                <div class="score">Score: 0</div>
+                
+                <div class="task-container">
+                    <div class="sequence" id="sequence"></div>
+                    <div class="target" id="target"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            <div class="final-score" id="finalScore"></div>
+            <canvas id="scoreGraph" width="600" height="300"></canvas>
+            <button onclick="resetGame()">restart</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
